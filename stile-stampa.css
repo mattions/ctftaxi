@@ -1,0 +1,192 @@
+/*Questo è il secondo foglio di stile */
+
+body {
+	width: 21cm;
+	background-color: #ffffff ;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;
+}
+#contenitore {
+	 width: auto;
+	 margin: 0 auto;text-align: left;
+    }
+
+#header {
+	background-color: #ffffff;
+}
+
+#logo {
+	display:none;
+	width:600px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+
+/*	 Menu */
+.pre-menu {
+	/* disabilito tutta la colonna destra.*/
+	display:none;
+	margin: 3em 1em auto 1em;
+	float: left;
+	width: 13em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	background-color: #ffffff;
+	}
+	
+#menu {
+	display:none;
+	margin: 3em 1em auto 1em;
+	float: left;
+	width: 13em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	background-color: #edef07;
+	border-right: 1px solid #ff3a18;
+	border-left: 1px solid #ff3a18;
+	border-bottom: 1px solid #ff3a18;
+	}
+#menu h3 {
+	color: #0054f7;
+	margin: 0px; 
+	padding: 0.5em ;
+	font-weight: bold;
+	border-bottom: 1px solid #ff3a18;
+	border-top: 1px solid #ff3a18;
+	background-color: #ffd618;
+	}
+.MenuSecondario {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	font-weight: bold;
+	text-align: left;
+	color: #ffffad;
+	margin-top: -1.0em;
+	margin-left: 2em;
+	}
+#menu a {
+	color:#3a17eb;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	background-color: #edef07;
+		}
+#menu a:hover {
+	text-decoration: underline;
+	background-color: #ffd618;
+	}
+#menu a#activelink{
+	color: #ff3a18;
+	text-decoration: none;
+	}
+#contatori {
+	display:none;
+	float: left;
+	width: 13em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #0054f7;
+	font-size: 10px; 
+	font-weight: bold;
+	background-color: #ffffff;
+	padding-top: 4em;
+	margin-left: 3em;
+	}
+/* Bandiere */
+	.allineamento {
+	display:none;
+	padding: 1em 3em 0.5em 3em;
+	border: 0px ;
+	}
+	
+/* Qui ci stà la promozione ed i contenuti */
+#contenuti {
+	padding: 1em;
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; color: #000000;
+	
+	}
+#contenuti h1 {
+	font-family: Geneva, Arial, Helvetica, sans-serif; color: #df3514;
+	}
+#contenuti h2 {
+	font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 25px; color: #df3514;
+	padding-top: 15px;
+	}
+#presentazione {
+	padding-bottom: 13em;
+	}
+	
+/* Immagini in home */
+
+#contatti {
+	margin-left: -19px;
+	}
+.contatti {
+	padding-top: 0px;
+	padding-bottom: 18px;
+	padding-right: 18px;
+	padding-left: 18px;
+	}
+
+#img {
+	display:none;
+	}
+/* Abilito o no la promozione */
+
+#promozione {
+	display: none ;
+	}
+
+	
+/* Qui metto lo stile della prenotazione :-) */
+
+.Campo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000;
+	padding: 0.2em;
+		}
+.esempio {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 11px; font-weight: bold; color: #afaaaa;
+	}
+#prenotazioni {
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	}
+.informativa {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	}
+
+	
+#bottoni {
+	margin-left: 12px;
+	}
+/* Preventivo */
+
+#prev_risp {
+	font-size: 18px; font-weight: bold;
+	display: inline;
+	
+	}
+
+/* Footer */
+.footer {
+	display: none;
+	padding-top: 0.5em;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0.5em;
+	margin: auto;
+	border: 0px;
+	}
+
+#footer {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; text-align: center; color: #ffffad;
+	background-color: #c5c718;
+	clear: left;
+
+	}
+
+

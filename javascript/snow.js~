@@ -1,0 +1,479 @@
+var ns4 = (navigator.appname.indexof("netscape") != -1 && !document.getelementbyid);
+
+if(!window.jsfx)
+	jsfx=new object();
+
+jsfx.layerno=0; 
+/**********************************************************************************/
+jsfx.createlayer = function(htmlstr, parent)
+{
+	var elem = null;
+
+ 	if(document.layers) 
+	{
+		var xname="xlayer" + jsfx.layerno++;
+		if(parent == null)
+			elem=new layer(2000);
+		else
+			elem=new layer(2000, parent.elem);
+ 
+		elem.document.open(); 
+		elem.document.write(htmlstr); 
+		elem.document.close(); 
+		elem.moveto(0,0);
+		elem.innerhtml = htmlstr;
+	}
+	else 
+	if(document.all) 
+	{
+		if(parent == null)
+			parent=document.body;
+		else
+			parent=parent.elem;
+
+		var xname = "xlayer" + jsfx.layerno++; 
+		var txt = '<div id="' + xname + '"'
+			+ ' style="position:absolute;left:0;top:0;visibility:hidden">' 
+			+ htmlstr 
+			+ '</div>'; 
+
+			parent.insertadjacenthtml("beforeend",txt); 
+
+		elem = document.all[xname]; 
+	} 
+	else 
+	if (document.getelementbyid)
+	{
+		if(parent == null)
+			parent=document.body;
+		else
+			parent=parent.elem;
+
+		var xname="xlayer" + jsfx.layerno++;
+		var txt = ""
+			+ "position:absolute;left:0px;top:0px;visibility:hidden";
+
+		var newrange = document.createrange();
+
+		elem = document.createelement("div");
+		elem.setattribute("style",txt);
+		elem.setattribute("id", xname);
+
+		parent.appendchild(elem);
+
+		newrange.setstartbefore(elem);
+		strfrag = newrange.createcontextualfragment(htmlstr);	
+		elem.appendchild(strfrag);
+	}
+
+	return elem;
+}
+/**********************************************************************************/
+jsfx.layer = function(newlayer, parent) 
+{
+	if(!newlayer)
+		return;
+
+	if(typeof newlayer == "string")
+		this.elem = jsfx.createlayer(newlayer, parent);
+	else
+		this.elem=newlayer;
+
+	if(document.layers)
+	{
+		this.images		= this.elem.document.images; 
+		this.parent		= parent;
+		this.style		= this.elem;
+		if(parent != null)
+			this.style.visibility = "inherit";
+ 	} 
+	else 
+	{
+		this.images  = document.images; 
+		this.parent	 = parent;
+		this.style   = this.elem.style; 
+	} 
+	window[this.elem.id]=this;	//save a reference to this
+} 
+/**********************************************************************************/
+jsfx.findlayer = function(thediv, d)
+{
+	if(document.layers)
+	{
+		var i;
+		if(d==null) d = document;
+		var thelayer = d.layers[thediv];
+		if(thelayer != null)
+			return(thelayer);
+		else
+			for(i=0 ; i<d.layers.length ; i++)
+			{
+				thelayer = jsfx.findlayer(thediv, d.layers[i].document);
+				if(thelayer != null)
+					return(thelayer);
+			}
+		return("undefined....");
+	}
+	else 
+	if(document.all)
+		return(document.all[thediv]);
+	else 
+	if(document.getelementbyid)
+		return(document.getelementbyid(thediv));
+	else
+		return("undefined.....");
+}
+
+/**********************************************************************************/
+/*** moveto (x,y) ***/
+jsfx.layer.prototype.moveto = function(x,y)
+{
+	this.style.left = x+"px";
+	this.style.top = y+"px";
+}
+if(ns4)
+	jsfx.layer.prototype.moveto = function(x,y) { this.elem.moveto(x,y); }
+/**********************************************************************************/
+/*** show()/hide() visibility ***/
+jsfx.layer.prototype.show		= function() 	{ this.style.visibility = "visible"; } 
+jsfx.layer.prototype.hide		= function() 	{ this.style.visibility = "hidden"; } 
+jsfx.layer.prototype.isvisible	= function()	{ return this.style.visibility == "visible"; } 
+if(ns4)
+{
+	jsfx.layer.prototype.show		= function() 	{ this.style.visibility = "show"; }
+	jsfx.layer.prototype.hide 		= function() 	{ this.style.visibility = "hide"; }
+	jsfx.layer.prototype.isvisible 	= function() 	{ return this.style.visibility == "show"; }
+}
+/**********************************************************************************/
+/*** zindex ***/
+jsfx.layer.prototype.setzindex	= function(z)	{ this.style.zindex = z; } 
+jsfx.layer.prototype.getzindex	= function()	{ return this.style.zindex; }
+/**********************************************************************************/
+/*** foreground (text) color ***/
+jsfx.layer.prototype.setcolor	= function(c){this.style.color=c;}
+if(ns4)
+	jsfx.layer.prototype.setcolor	= function(c)
+	{
+		this.elem.document.write("<font color='"+c+"'>"+this.elem.innerhtml+"</font>");
+		this.elem.document.close();
+	}
+/**********************************************************************************/
+/*** background color ***/
+jsfx.layer.prototype.setbgcolor	= function(color) { this.style.backgroundcolor = color==null?'transparent':color; } 
+if(ns4)
+	jsfx.layer.prototype.setbgcolor 	= function(color) { this.elem.bgcolor = color; }
+/**********************************************************************************/
+/*** background image ***/
+jsfx.layer.prototype.setbgimage	= function(image) { this.style.backgroundimage = "url("+image+")"; }
+if(ns4)
+	jsfx.layer.prototype.setbgimage 	= function(image) { this.style.background.src = image; }
+/**********************************************************************************/
+/*** set content***/
+jsfx.layer.prototype.setcontent   = function(xhtml)	{ this.elem.innerhtml=xhtml; } 
+if(ns4)
+	jsfx.layer.prototype.setcontent   = function(xhtml)
+	{
+		this.elem.document.write(xhtml);
+		this.elem.document.close();
+		this.elem.innerhtml = xhtml;
+	}
+
+/**********************************************************************************/
+/*** clipping ***/
+jsfx.layer.prototype.clip = function(x1,y1, x2,y2){ this.style.clip="rect("+y1+" "+x2+" "+y2+" "+x1+")"; }
+if(ns4)
+	jsfx.layer.prototype.clip = function(x1,y1, x2,y2)
+	{
+		this.style.clip.top	=y1;
+		this.style.clip.left	=x1;
+		this.style.clip.bottom	=y2;
+		this.style.clip.right	=x2;
+	}
+/**********************************************************************************/
+/*** resize ***/
+jsfx.layer.prototype.resizeto = function(w,h)
+{ 
+	this.style.width	=w + "px";
+	this.style.height	=h + "px";
+}
+if(ns4)
+	jsfx.layer.prototype.resizeto = function(w,h)
+	{
+		this.style.clip.width	=w;
+		this.style.clip.height	=h;
+	}
+/**********************************************************************************/
+/*** getx/y ***/
+jsfx.layer.prototype.getx	= function() 	{ return parseint(this.style.left); }
+jsfx.layer.prototype.gety	= function() 	{ return parseint(this.style.top); }
+if(ns4)
+{
+	jsfx.layer.prototype.getx	= function() 	{ return this.style.left; }
+	jsfx.layer.prototype.gety	= function() 	{ return this.style.top; }
+}
+/**********************************************************************************/
+/*** getwidth/height ***/
+jsfx.layer.prototype.getwidth		= function() 	{ return this.elem.offsetwidth; }
+jsfx.layer.prototype.getheight	= function() 	{ return this.elem.offsetheight; }
+if(!document.getelementbyid)
+	jsfx.layer.prototype.getwidth		= function()
+ 	{ 
+		//extra processing here for clip
+		return this.elem.scrollwidth;
+	}
+
+if(ns4)
+{
+	jsfx.layer.prototype.getwidth		= function() 	{ return this.style.clip.right; }
+	jsfx.layer.prototype.getheight	= function() 	{ return this.style.clip.bottom; }
+}
+/**********************************************************************************/
+/*** opacity ***/
+if(ns4)
+{
+	jsfx.layer.prototype.setopacity = function(pc) {return 0;}
+}
+else if(document.all)
+{
+	jsfx.layer.prototype.setopacity = function(pc)
+	{
+		if(this.style.filter=="")
+			this.style.filter="alpha(opacity=100);";
+		this.elem.filters.alpha.opacity=pc;
+	}
+}
+else
+{
+/*** assume ns6 ***/
+	jsfx.layer.prototype.setopacity = function(pc){	this.style.mozopacity=pc+'%' }
+}
+/**************************************************************************/
+/*** event handling - start ***/
+/*** ns4 ***/
+if(ns4)
+{
+	jsfx.eventmasks = {
+	      onabort:event.abort, onblur:event.blur, onchange:event.change,
+	      onclick:event.click, ondblclick:event.dblclick, 
+	      ondragdrop:event.dragdrop, onerror:event.error, 
+	      onfocus:event.focus, onkeydown:event.keydown,
+	      onkeypress:event.keypress, onkeyup:event.keyup, onload:event.load,
+	      onmousedown:event.mousedown, onmousemove:event.mousemove, 
+	      onmouseout:event.mouseout, onmouseover:event.mouseover, 
+	      onmouseup:event.mouseup, onmove:event.move, onreset:event.reset,
+	      onresize:event.resize, onselect:event.select, onsubmit:event.submit,
+	      onunload:event.unload
+	};
+	jsfx.layer.prototype.addeventhandler = function(eventname, handler) 
+	{
+          this.elem.captureevents(jsfx.eventmasks[eventname]);
+          var xl = this;
+      	this.elem[eventname] = function(event) { 
+		event.clientx	= event.pagex;
+		event.clienty	= event.pagey;
+		event.button	= event.which;
+		event.keycode	= event.which;
+		event.altkey	=((event.modifiers & event.alt_mask) != 0);
+		event.ctrlkey	=((event.modifiers & event.control_mask) != 0);
+		event.shiftkey	=((event.modifiers & event.shift_mask) != 0);
+            return handler(xl, event);
+        }
+	}
+	jsfx.layer.prototype.removeeventhandler = function(eventname) 
+	{
+		this.elem.releaseevents(jsfx.eventmasks[eventname]);
+		delete this.elem[eventname];
+	}
+}
+/**************************************************************************/
+/** ie 4/5+***/
+else
+if(document.all)
+{
+	jsfx.layer.prototype.addeventhandler = function(eventname, handler) 
+	{
+		var xl = this;
+		this.elem[eventname] = function() 
+		{ 
+	            var e = window.event;
+	            e.cancelbubble = true;
+			if(document.getelementbyid)
+			{
+				e.layerx = e.offsetx;
+				e.layery = e.offsety;
+			}
+			else
+			{
+				/*** work around for ie 4 : clone window.event ***/
+				ev = new object();
+				for(i in e)
+					ev[i] = e[i];
+				ev.layerx	= e.offsetx;
+				ev.layery	= e.offsety;
+				e = ev;
+			}
+
+	            return handler(xl, e); 
+		}
+	}
+	jsfx.layer.prototype.removeeventhandler = function(eventname) 
+	{
+		this.elem[eventname] = null;
+	}
+}
+/**************************************************************************/
+/*** assume ns6 ***/
+else
+{
+	jsfx.layer.prototype.addeventhandler = function(eventname, handler) 
+	{
+		var xl = this;
+		this.elem[eventname] = function(e) 
+		{ 
+	            e.cancelbubble = true;
+	            return handler(xl, e);
+		}
+	}
+	jsfx.layer.prototype.removeeventhandler = function(eventname) 
+	{
+		this.elem[eventname] = null;
+	}
+}
+/*** event handling - end ***/
+/**************************************************************************/
+jsfx.layer.prototype.settimeout = function(f, t) 
+{
+	settimeout("window."+this.elem.id+"."+f, t);
+}
+if(!window.jsfx)
+	jsfx=new object();
+
+if(!jsfx.browser)
+	jsfx.browser = new object();
+
+if(navigator.appname.indexof("netscape") != -1)
+{
+	jsfx.browser.getcanvaswidth	= function() {return innerwidth;}
+	jsfx.browser.getcanvasheight	= function() {return innerheight;}
+	jsfx.browser.getwindowwidth 	= function() {return outerwidth;}
+	jsfx.browser.getwindowheight	= function() {return outerheight;}
+	jsfx.browser.getscreenwidth 	= function() {return screen.width;}
+	jsfx.browser.getscreenheight	= function() {return screen.height;}
+	jsfx.browser.getminx		= function() {return(pagexoffset);}
+	jsfx.browser.getminy		= function() {return(pageyoffset);}
+	jsfx.browser.getmaxx		= function() {return(pagexoffset+innerwidth);}
+	jsfx.browser.getmaxy		= function() {return(pageyoffset+innerheight);}
+
+}
+else 	if(document.all) 	{
+	jsfx.browser.getcanvaswidth	= function() {return document.body.clientwidth;}
+	jsfx.browser.getcanvasheight	= function() {return document.body.clientheight;}
+	jsfx.browser.getwindowwidth 	= function() {return document.body.clientwidth;}
+	jsfx.browser.getwindowheight	= function() {return document.body.clientheight;}
+	jsfx.browser.getscreenwidth	= function() {return screen.width;}
+	jsfx.browser.getscreenheight	= function() {return screen.height;}
+	jsfx.browser.getminx		= function() {return(document.body.scrollleft);}
+	jsfx.browser.getminy		= function() {return(document.body.scrolltop);}
+	jsfx.browser.getmaxx		= function() {
+		return(document.body.scrollleft
+			+document.body.clientwidth);
+	}
+	jsfx.browser.getmaxy		= function() {
+			return(document.body.scrolltop
+				+document.body.clientheight);
+	}
+} 
+jsfx.fallingsprite = function(thehtml)
+{
+	//call the superclass constructor
+	this.superc	= jsfx.layer;
+	this.superc(thehtml);
+
+	this.x = math.random() * (jsfx.browser.getmaxx()-40);
+	this.y = -40;
+	this.dx = math.random() * 4 - 2;
+	this.dy = math.random() * 6 + 2;
+	this.ang = 0;
+	this.angstep = .2;
+	this.amp = 10;
+	this.state = "fall";
+
+	this.moveto(this.x,this.y);
+	this.show();
+}
+jsfx.fallingsprite.prototype = new jsfx.layer;
+
+jsfx.fallingsprite.prototype.animate = function()
+{
+	if(this.state == "off")
+		return;
+
+	this.x += this.dx;
+	this.y += this.dy;
+	this.ang += this.angstep;
+
+	this.moveto(this.x + this.amp*math.sin(this.ang), this.y);
+
+	if( (this.x > jsfx.browser.getmaxx()-20)
+	 || (this.x < jsfx.browser.getminx()-0)
+	 || (this.y > jsfx.browser.getmaxy()-40) )
+	{
+		if(this.state == "stopping")
+		{
+			this.moveto(-100,-100);
+			this.hide();
+			this.state = "off";
+		}
+		else
+		{
+			this.x = math.random() * (jsfx.browser.getmaxx()-40);
+			this.y = jsfx.browser.getminy()-40;
+			this.dx = math.random() * 4 - 2;
+			this.dy = math.random() * 6 + 2;
+			this.ang = 0;
+		}
+	}
+}
+/*** class fallingobj extends object ***/
+jsfx.fallingobj = function(numsprites, theimage, stoptime)
+{
+	this.id = "jsfx_fallingobj_"+jsfx.fallingobj.count++;
+	this.sprites = new array();
+	for(i=0 ; i<numsprites; i++)
+	{
+		this.sprites[i]=new jsfx.fallingsprite(theimage);
+	}
+	window[this.id]=this;
+	this.animate();
+
+	if(stoptime)
+		settimeout("window."+this.id+".stop()", stoptime*1000);
+
+}
+jsfx.fallingobj.count = 0;
+
+jsfx.fallingobj.prototype.stop = function()
+{
+	for(i=0 ; i<this.sprites.length ; i++)
+		this.sprites[i].state = "stopping";
+}
+
+jsfx.fallingobj.prototype.animate = function()
+{
+	settimeout("window."+this.id+".animate()", 40);
+
+	for(i=0 ; i<this.sprites.length ; i++)
+		this.sprites[i].animate();
+
+}
+/*** end class fallingobj ***/
+
+/*
+ * class falling extends object (static method for creating "falling" objects
+ */
+falling = function(n, theimage, stoptime)
+{
+	myfalling = new jsfx.fallingobj(n, theimage, stoptime);
+
+	return myfalling;
+}

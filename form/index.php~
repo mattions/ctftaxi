@@ -1,0 +1,80 @@
+<?php
+/*
+Inclusione delle varie classi
+*/
+include_once('./it_error_const.inc.php') ;
+include_once('./regole.php') ;
+include_once('./tipi.php') ;
+include_once('./form_handler.php') ;
+
+/*
+In produzione sopprimiamo gli invevitabili notice sui campi che ancora non esistono
+*/
+error_reporting(E_ALL ^ E_NOTICE) ;
+
+class CrossPassword extends AbstrErrHandler
+{
+
+    function CrossPassword($pass1, $pass2, $error)
+    {
+    
+        if($pass1 != $pass2)
+				{
+				
+				   $this->errors[] =  $error ;
+				
+				}        
+    
+    }//END CrossPassword
+
+}
+
+$fields = array() ;
+
+$cross =  array() ;
+
+
+/*
+Definizione dei campi
+*/
+$fields['nome'] = new FrmField( $_REQUEST['nome'], 'Nome', false, array( new PatternRule("/^\w{3,15}$/i") ) ) ;
+
+$fields['cognome'] = new FrmField( $_REQUEST['cognome'], 'Cognome', false, array( new PatternRule("/^\w{3,20}$/i") ) ) ;
+
+$fields['userid'] = new MailField( $_REQUEST['userid'], 'Userid', true) ;
+
+$fields['pw1'] = new FrmField( $_REQUEST['pw1'], 'Password 1', true, array( new StrRangeRule(8, 10) ) ) ;
+
+$fields['pw2'] = new FrmField( $_REQUEST['pw2'], 'Password 2', true, array( new StrRangeRule(8, 10) ) ) ;
+
+/*
+Regole che incrociano i campi
+*/
+$cross[] = new CrossPassword($_REQUEST['pw1'], $_REQUEST['pw2'], 'I campi password non contengono gli stessi valori') ;
+
+
+
+$form = new SmartForm('invia', $fields, $cross) ;
+
+/*
+Se il form non è stato inviato o è inviato ma ci sono errori
+*/
+if( !$form->isSent || !$form->isValid() )
+{
+    /*
+		Mostra il form ed eventuali errori
+		*/
+    $form->display('tesTpl.php') ;
+
+}
+
+//Se invece è tutto ok
+//elabora i dati inviati
+echo "Dati inviati:<br><br>" ;
+
+
+var_export($_POST) ;
+
+
+
+?>

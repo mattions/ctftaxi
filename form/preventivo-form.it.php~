@@ -1,0 +1,40 @@
+<?php
+/*
+File preventivo-form.it.php
+Contiene il file del form per il preventivo.
+*/
+
+
+
+	    $errors = $FORM->getErrors() ;
+	
+	    if( !empty($errors) )
+		{
+		    echo "<br><br>" ;
+		    echo( join("<br>\r\n" ,  $errors) ) ; 
+			echo "<br><br>" ;   
+		
+		}
+	
+?>
+	 <!-- Form preventivo -->
+	 <form action="preventivo.it.php" method="post" name="Preventivo">
+	 <tr>
+		<td class="Campo">Calcola il tuo preventivo</td>
+		<td>
+			<select name="preventivo" type="text" value="<?php echo $FIELDS['preventivo']->val ?>" />
+				 <optgroup label="Città">
+				   <option>Stazione F.S. Falconara Marittima</option>
+				   <option>Stazione F.S. Ancona</option>
+				   <option>Ancona Centro</option>
+				   <option>Ancona Baraccola</option>
+				 </optgroup>
+				
+				 <optgroup label="Hotel">
+				  <option >Hotel Jolly</option>
+				  <option >Hotel Avion</option>
+				  <option >Hotel Avion</option>
+				  </optgroup>
+			</select>		  
+			
+			<input name="invia" type="Submit" /> 

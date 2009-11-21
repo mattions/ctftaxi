@@ -1,0 +1,392 @@
+/*Questo è il foglio di stile con i menu le h1 blu e i Capi_Lettera Rossi.*/
+
+body {
+	/*
+	background-color: #ffffff ;
+	*/
+	background-color: #ACACC9;
+	color: #000000;
+	font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 12px; color: #000000;
+}
+
+#contenitore {
+	/*
+	width: 760px;
+	*/
+	width: 960px;
+	margin: 0 auto;
+	text-align: left;
+    
+    border-right: 4px solid #36c;
+    border-top: 4px solid #36c;
+    border-left: 4px solid #36c;
+    border-bottom: 4px solid #36c;
+    padding: 3em;
+    background-color: #ffffff ;
+    }
+
+#header {
+	background-color: #ffffff;
+}
+
+#logo {
+	width:600px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+/* Banner */
+#banner {
+	margin-top: auto;
+	padding: 10px 0px 0px 0px;
+	float: right;
+	width: 13em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 14px; 
+	font-weight: bold;
+	background: trasparent;
+
+	}
+.banner_piccolo {
+	padding: 3em 0px 1em 1em;
+	}
+	
+.ogni_banner {
+	padding: 0.5em 0px 0.5em 0em;
+	}
+	
+#id contatore {
+	width: 22px;
+	height: 20px;
+	margin: auto;
+	}
+#id top_cento {
+	width:88px;
+	height:31px;
+	margin-left: auto;
+	margin-right: auto;
+	}
+
+/* Colonna dx */
+#rettangolo_destro {
+	padding : 0em 0px 3em 0px;
+	}
+#rettangolo_alto_dx {
+	margin-top: 1.5em;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #ffffff;
+	font-size: 14px; 
+	font-weight: bold;
+	background-color: #0000FF;
+	border-top: 1px solid #ff3a18;
+	border-right: 1px solid #ff3a18;
+	border-bottom: 1px solid #ff3a18;
+	border-left: 1px solid #ff3a18;
+	}
+
+
+/*	 Menu */
+.pre-menu {
+	margin: 3em 1em auto 1em;
+	float: left;
+	width: 13em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	background-color: #ffffff;
+	}
+	
+#menu {
+	margin: 3em 1em auto 1em;
+	float: left;
+	width: 13em; 
+	/*
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	*/
+	font-size: 12px; 
+	font-weight: bold;
+	background-color: #0000FF;
+	border-right: 1px solid #ff3a18;
+	border-left: 1px solid #ff3a18;
+	border-bottom: 1px solid #ff3a18;
+	}
+#menu h3 {
+	/*
+	color: #99A6BF;
+	
+	*/
+	
+	color: #DCDCDC;
+	margin: 0px; 
+	padding: 0.5em ;
+	font-weight: bold;
+	border-bottom: 1px solid #ff3a18;
+	border-top: 1px solid #ff3a18;
+	background-color: #000080;
+	}
+#menu h4 {
+	color: #ffffff;
+	margin: 0px; 
+	padding: 0.5em ;
+	font-weight: bold;
+	}
+/* Serve per il new rosso in apice sul servizio novità*/
+#apice {
+	color: #F7000C;
+	display: inline;
+	margin-bottom: 2px;
+	}
+	
+.MenuSecondario {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 10px; 
+	font-weight: bold;
+	text-align: left;
+	color: #ffffff;
+	margin-top: -1.0em;
+	margin-left: 2em;
+	}
+	
+	/* Aggiusta le prenotazioni tedesche */
+#menu li {
+	margin: 0px 0px 0px -1em;
+		}
+			
+#menu a {
+	color:#ffffff;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	text-decoration: none;
+	background-color:  #0000FF;
+		}
+#menu a:hover {
+	text-decoration: underline;
+	background-color: #000080;
+	}
+#menu a#activelink{
+	color: #FF0000;
+	text-decoration: none;
+	}
+#contatori {
+	float: left;
+	width: 13em; 
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	color: #3F40DF;
+	font-size: 10px; 
+	font-weight: bold;
+	background-color: #ffffff;
+	padding-top: 4em;
+	margin-left: 3em;
+	}
+/* Bandiere */
+#bandiere {
+	padding: 1em 0em 1em 6em;
+	}
+	
+	.allineamento {
+	padding: 1em 3em 0.5em 7em;
+	border: 0px ;
+	}
+	
+/* Qui ci stà la promozione ed i contenuti */
+#contenuti {
+	margin: 0px 13em 0px 15em;
+	padding: 1em;
+	font-family: Geneva, Verdana, Helvetica, sans-serif; font-size: 14px; color: #000000;
+	
+	}
+
+.Prima_Lettera_Intestazioni {
+	/*
+	font-family: Geneva, Arial, Helvetica, sans-serif; color: #FFFFFF; 
+	*/
+	font-family: 'times',roman, serif; color: #FFFFFF;
+	font-weight:bold; font-size:32px;
+	background-color: #FF0000;
+	display: inline;
+	padding: 2px 0px 0px 6px;
+	
+	 border-right: 1px dotted #36c;
+    border-top: 2px solid #36c;
+    border-left: 2px solid #36c;
+    border-bottom: 2px solid #36c;
+    
+	}
+#contenuti h1 {
+	font-family: Arial, Helvetica, sans-serif; color: #FFFFFF; 
+	font-weight:bold; font-size:16px; 
+	background-color: #000080;
+	display: inline;
+	padding: 1px 4px 2px 0px;
+	
+	border-right: 2px solid #FF0000;
+    border-top: 2px solid #FF0000;
+    border-left: 1px dotted #FF0000;
+    border-bottom: 2px solid #FF0000;
+	
+	}
+	/*	
+	.Prima_Lettera_Intestazioni {
+	font-family: Geneva, Arial, Helvetica, sans-serif; color: #FFFFFF; 
+	font-weight:bold; font-size:26px;
+	background-color: #0054F7;
+	display: inline;
+	padding: 2px 0px 0px 6px;
+	}
+#contenuti h1 {
+	font-family: Arial, Helvetica, sans-serif; color: #EF2800; font-size:16px; 
+	background-color: #FBFF00;
+	display: inline;
+	padding: 0px 0px 3px 0px;
+	
+	}
+*/
+	/*
+.Corpo_Intestazioni {
+	font-family: Geneva, Arial, Helvetica, sans-serif; color: #FFFFFF;
+	background-color: #000080;
+	display: inline;
+	}
+	*/
+		
+#contenuti h2 {
+	font-family: Geneva, Arial, Helvetica, sans-serif; font-size: 25px; color: #df3514;
+	padding-top: 15px;
+	}
+#presentazione {
+	padding-bottom: 13em;
+	}
+	
+/* Immagini in home */
+
+#contatti {
+	margin-left: -19px;
+	
+	}
+.contatti {
+	font-family: Geneva, Arial, Helvetica, sans-serif; font-weight: bold;
+	padding-top: 0px;
+	padding-bottom: 18px;
+	padding-right: 18px;
+	padding-left: 18px;
+	}
+
+/* Abilito o no la promozione */
+
+#promozione {
+	display: none ;
+	}
+
+	
+/* Qui metto lo stile della prenotazione :-) */
+
+.Campo {
+	font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000;
+	padding: 0.2em;
+		}
+.esempio {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 11px; font-weight: bold; 
+	color: #afaaaa;
+	}
+#prenotazioni {
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	}
+.informativa {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 9px;
+	}
+	
+#fuori-servizio a {
+	border: 0px;
+	}
+	
+#bottoni {
+	padding: 5px;
+	
+	}
+
+.formatta_bottoni {
+	background-color: #0000FF;
+	border-top: 2px solid #000080;
+	border-right: 6px solid #000080;
+	border-bottom: 6px solid #000080;
+	border-left: 2px solid #000080;
+	color: #ffffff;
+	font-weight: bold;
+	
+	}
+	
+/* Preventivo */
+
+#enfasi_preventivo {
+	font-size: 18px; 
+	color: #0000FF;
+	padding-bottom: 1em;
+	}
+#enfasi_preventivo h3 {
+	font-size: 20px;
+	color: #FF0000;
+	}
+.enfasi_dettaglio{
+	display: inline;
+	color: #FF0000;
+	font-weight: bold;
+	}
+	
+#prev_risp {
+	font-size: 18px; font-weight: bold;
+	display: inline;
+	}
+	
+/* Shuttle-Airport */
+
+#shuttle-airport td {
+	padding: 1em 1em 1em 1em;
+	}
+	
+/* Carte di credito */
+#carte_di_credito {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-weight: bold;
+	font-size: 12px; 
+	text-align: center; 
+	color: #696969;
+	clear: left;
+
+	}
+
+/* Footer */
+.footer {
+	padding-top: 0.5em;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 0.5em;
+	margin: auto;
+	border:0px;
+	}
+
+#footer {
+	
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 14px; 
+	text-align: center; 
+	color: #ffffad;
+	background-color: #0000FF;
+	border: 1px solid #ff3a18;
+	clear: left;
+
+	}
+#footer a {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+	font-size: 12px; 
+	font-weight: bold;
+	text-align: right; 
+	color: #ACACAC;
+}
+#footer p {
+	text-align : right;
+	display : inline;
+	}

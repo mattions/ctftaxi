@@ -1,0 +1,3 @@
+#escludo tutti dalla directory delle statistiche
+User-agent: *
+Disallow: /stats/

@@ -1,0 +1,183 @@
+<?php
+/*
+File: prenotazione-form.it.php
+
+E' il form che viene mostrato in prenotazioni :-)
+
+Basta dire che la pagina a cui vanno i dati è prenotazione.it.php
+*/
+
+
+
+	    $errors = $FORM->getErrors() ;
+	
+	    if( !empty($errors) )
+		{
+		    echo "<br><br>" ;
+		    echo( join("<br>\r\n" ,  $errors) ) ; 
+			echo "<br><br>" ;   
+		
+		}
+	
+	?>
+	<div id="prenotazioni">
+									
+						<h1>Prenotazione</h1>
+						
+						<form action="prenotazioni.it.php" method="post" name="Prenotazioni">
+						<div class = "esempio">
+							<p>Per viaggi di lunga percorrenza si richiede accordo telefonico.</p>
+						</div>
+						
+						<table>
+						
+						<tr>
+							<td class="Campo">Giorno :</td>
+							<td>
+								<select name="giorno" type="text" value="<?php echo $FIELDS['giorno']->val ?>" />
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								<option>7</option>
+								<option>8</option>
+								<option>9</option>
+								<option>10</option>
+								<option>11</option>
+								<option>12</option>
+								<option>13</option>
+								<option>14</option>
+								<option>15</option>
+								<option>16</option>
+								<option>17</option>
+								<option>18</option>
+								<option>19</option>
+								<option>20</option>
+								<option>21</option>
+								<option>22</option>
+								<option>23</option>
+								<option>24</option>
+								<option>25</option>
+								<option>26</option>
+								<option>27</option>
+								<option>28</option>
+								<option>29</option>
+								<option>30</option>
+								<option>31</option>
+								</select>
+							</td>
+						</tr>
+						
+						<td class="Campo">Mese :</td>
+							<td>
+								<select name="mese" type="text" value="<?php echo $FIELDS['mese']->val ?>" />
+								<option>Gennaio</option>
+								<option>Febbraio</option>
+								<option>Marzo</option>
+								<option>Aprile</option>
+								<option>Maggio</option>
+								<option>Giugno</option>
+								<option>Luglio</option>
+								<option>Agosto</option>
+								<option>Settembre</option>
+								<option>Ottobre</option>
+								<option>Novembre</option>
+								<option>Dicembre</option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="Campo">Numero Passeggeri :</td>
+							<td>
+								<select name="passeggeri" type="text" value="<?php echo $FIELDS['giorno']->val ?>" />>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								<option>4</option>
+								<option>5</option>
+								<option>6</option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="Campo">Bambini in Sicurezza :</td>
+							<td>
+								<select name="bambini" type="text" value="<?php echo $FIELDS['bambini']->val ?>" />>
+								<option>0</option>
+								<option>1</option>
+								<option>2</option>
+								<option>3</option>
+								</select>
+							</td>
+						</tr>
+						
+						<tr>
+							<td class="Campo">Bagaglio: </td>
+							<td>
+						<table >
+						<tr>
+							<td>
+							<table >
+							<tr>
+								<td><input name="bagaglio" type="radio" value="<?php echo $FIELDS['bagalio']->val='SI' ?>"  />
+								</td>
+							<td>SI</td>
+						</tr>
+							<tr>
+								<td><input name="bagaglio" type="radio" value="<?php echo $FIELDS['bagalio']->val='NO' ?>" type="radio" />
+								</td>
+							<td>NO</td>
+							</tr>
+						</table>
+						</td></tr></table>
+						
+						<tr>
+							<td class="Campo">Partenza* :</td>
+							<td><input name="partenza" type="text" value="<?php echo $FIELDS['partenza']->val ?>" size="20" maxlength="40" /></td>
+						</tr>
+
+						<tr>
+							<td class="Campo">Destinazione* :</td>
+							<td><input name="arrivo" type="text" value="<?php echo $FIELDS['arrivo']->val ?>" size="20" maxlength="40"/></td>
+						</tr>
+									
+						<tr>
+							<td class="Campo">Nome* :</td>
+							<td><input name="nome" type="text" value="<?php echo $FIELDS['nome']->val ?>" size="20" maxlength="15"/></td>
+						</tr>
+						
+						<tr>
+							<td class="Campo">Cognome* :</td>
+							<td><input name="cognome" type="text" value="<?php echo $FIELDS['cognome']->val ?>" size="20" maxlength="15"/></td>
+						</tr>
+
+						<tr>
+							<td class="Campo">E-Mail : <div class = "esempio"> (ex: tua_email@tuo_provider.tdl)</div></td>
+							<td><input name="e-mail" type="text" value="<?php echo $FIELDS['e-mail']->val ?>" size="30" maxlength="40"></td>
+						</tr>
+						
+						<tr>
+							<td class="Campo">Recapito Telefonico* : <div class = "esempio"> (ex: 333/123456789)</div></td>
+							<td><input name="telefono" type="text" value="<?php echo $FIELDS['telefono']->val ?>" size="30" maxlength="40"></td>
+						</tr>
+						
+						<tr>
+						<td class="Campo" >Note :</td>
+							<td>
+								<textarea name="note" type="text" value="<?php echo $FIELDS['note']->val ?>" rows="5" cols="20">
+								</textarea>
+							</td>
+						</tr>
+										
+						<td id="bottoni">
+						<input name="invia" type="Submit" /> <input name="reset" value="reset" type="reset" />
+						</td>
+						</table>
+						<p><i>I campi marcati * sono obbligatori.</i></p>
+						
+						</form>
+			</div>
