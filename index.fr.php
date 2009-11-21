@@ -14,7 +14,15 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-</head>
+<!-- Introduco lo scriptino natalizio -->
+<?php
+	$natale = 1 ;
+	if ($natale == 1) {
+		include ("include/header.natalizio.inc.php");
+	} else {
+				include ("include/header.inc.php");
+	}
+?>
 <!-- Quella &egrave; la testa -->
 
 <body lang="fr">

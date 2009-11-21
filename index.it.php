@@ -16,7 +16,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
 <!-- Introduco lo scriptino natalizio -->
 <?php
-	$natale = False ;
+	$natale = 1 ;
 	if ($natale == 1) {
 		include ("include/header.natalizio.inc.php");
 	} else {
