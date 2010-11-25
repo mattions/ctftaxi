@@ -25,7 +25,7 @@ $footer=<<<EOF
 
 				
 				
-				<h4> &copy; 2005 - 2008 ctftaxi.it  P.IVA 02218920425</h4>
+				<h4> &copy; 2005 - 2010 ctftaxi.it  P.IVA 02218920425</h4>
 	
 				
 				<p align = "left"><a href="stats/admin.php">stats</a> </p>

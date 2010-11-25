@@ -45,7 +45,7 @@ $footer=<<<EOF
 				<a href="http://jigsaw.w3.org/css-validator/validator?uri=http://www.ctftaxi.it"><img class =" footer" width="88px" height="31px" alt="Valid CSS!" title="Valid CSS!" src="immagini/valid-css.jpeg" /></a>
 
 				<a href="mailto:webmaster@ctftaxi.it"><img class =" footer" title="webmaster@ctftaxi.it" alt="webmaster@ctftaxi.it" height="31px" width="54px" src="immagini/mail.png" /></a>
-				<h4> &copy; 2005 - 2006 ctftaxi.it  P.IVA 02218920425</h4>	
+				<h4> &copy; 2005 - 2010 ctftaxi.it  P.IVA 02218920425</h4>	
 				
 				<p align = "left"><a href="stats/admin.php">stats</a> </p>
 				
