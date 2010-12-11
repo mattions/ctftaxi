@@ -272,9 +272,9 @@ body {
 .contatti {
 	font-family: Geneva, Arial, Helvetica, sans-serif; font-weight: bold;
 	padding-top: 0px;
-	padding-bottom: 18px;
-	padding-right: 18px;
-	padding-left: 18px;
+	padding-bottom: 10px;
+	padding-right: 0px;
+	padding-left: 10px;
 	}
 
 #meeting {
