@@ -104,10 +104,10 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 							<tr>
 								<td class = "contatti"><img alt="telefono" title="telefono" width="108" 
 									height="52" src="immagini/phone_text.png" /></td>
-								<td class = "contatti"><p>334-1548899</p><p>071-9189531</p></td>
+								<td class = "contatti"><p>+39 334 1548899</p><p>+39 071 9189531</p></td>
 								<td class = "contatti"><img alt="fax" title="fax" width="64" height="28" 
 									src="immagini/fax_text.png" /></td>
-								<td class = "contatti"><p>071-9157034</p></td>
+								<td class = "contatti"><p>+39 071 9157034</p></td>
 							</tr>
 							<tr>
 								<td class = "contatti"><img alt="e-mail" title="e-mail" width="98" 

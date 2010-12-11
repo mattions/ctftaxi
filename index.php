@@ -16,7 +16,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 
 <!-- Introduco lo scriptino natalizio -->
 <?php
-	$natale = 1 ;
+	$natale = 0 ;
 	if ($natale == 1) {
 		include ("include/header.natalizio.inc.php");
 	} else {
@@ -70,15 +70,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				</ul>
 				</div>
 			</div>
-			<div id="contatori">
-				<!-- Contatori -->
-							<?php
-								define('__PHP_STATS_PATH__','/web/htdocs/www.ctftaxi.it/home/stats/');
-								include(__PHP_STATS_PATH__.'php-stats.redir.php');
-							?>
-					<p>Utenti on line</p><p><script type="text/javascript" src="http://www.ctftaxi.it/stats/view_stats.js.php?mode=0"></script></p>
-					<p>Visitatori totali</p><p><script type="text/javascript" src="http://www.ctftaxi.it/stats/view_stats.js.php?mode=3">Visitatori totali</script></p>
-			</div>
 		</div>
 		<div id = "colonna_centrale">
 			<div id="contenuti">
@@ -86,7 +77,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 					<h1 >Taxi Ancona Falconara aeroporto</h1>
 						<p>La <img alt="ctf" title="C.T.F." src="immagini/ctf-logo-small.png" /> &egrave; un <strong>nuovo servizio</strong> a disposizione di utenti privati ed aziendali <strong>per il trasporto</strong> di persone e piccoli volumi.</p> 
 						<p>Offriamo una vasta gamma di mezzi che vanno dalla monovolume versione business alla berlina comfort e di lusso senza escludere le comode e spaziose station wagon.</p>
-				
 					<h1 >Dove ci trovi</h1>
 						<p>La nostra sede &egrave; sita presso 
 						<a href = "http://www.ancona-airport.com/Default.asp" class="link" >l'aeroporto</a> 
@@ -99,9 +89,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 								<tr>
 									<td class = "contatti"><img alt="telefono" title="telefono" width="108" 
 									height="52" src="immagini/phone_text.png" /></td>
-									<td class = "contatti"><p>334-1548899</p><p>071-9189531</p></td>
+									<td class = "contatti"><p>+39 334 1548899</p><p>+39 071 9189531</p></td>
 									<td class = "contatti"><img alt="fax" title="fax" width="64" height="28" 
-									src="immagini/fax_text.png" /></td><td class = "contatti"><p>071-9157034</p></td>
+									src="immagini/fax_text.png" /></td><td class = "contatti"><p>+39 071 9157034</p></td>
 								</tr>
 								<tr>
 									<td class = "contatti"><img alt="e-mail" title="e-mail" width="98" 
