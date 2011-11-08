@@ -45,6 +45,11 @@ $rettangolo_destro_alto_seconda_parte=<<<EOF2
 			alt="Hotel " src="immagini/anconaNetwork.jpeg" /></a>
 		</div>
 		<div class = "ogni_banner">
+			<a target="_blank" href="http://www.essentiarelais.it/"><img 
+			width="100" height="35" title="Our choose" 
+			alt="Hotel " src="immagini/Essentia_relais_logo_small.jpg" /></a>
+		</div>
+		<div class = "ogni_banner">
 			<!-- INSERISCI QUESTA TAG NELLA POSIZIONE DESIDERATA DELL'AREA ANNUNCIO Banner1Dx180x150 -->
 			<script type="text/javascript">
 			  GA_googleFillSlot("Banner1Dx180x150");
