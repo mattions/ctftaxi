@@ -8,7 +8,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <meta name="description" content="Il tuo taxi a Falconara Marittima" />
 <meta name="keywords" content="taxi aereoporto falconara marittima ancona servio pubblico 
 	mezzo trasporto spostamento itinerario auto macchina treno autobus consorzio " />
-<title>Consorzio Tassisti Falconara Marittima -- Shuttle Airport -- TAXI FALCONARA ANCONA</title>
+<title>Consorzio Tassisti Falconara Marittima -- TAXI FALCONARA ANCONA</title>
 <link type="text/css" rel="stylesheet" href="mainstyle-2.css" media="screen"/>
 <link type="text/css" rel="stylesheet" href="stile-stampa.css" media="print"/>
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -43,12 +43,15 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				<div id="menu-navigazione">
 				<h3>Navigazione Sito</h3>
 				<ul>
-	            <li><a href="index.de.php">Home</a></li>
-	            <li><a href="prenotazioni.de.php">Bestellung</a></li>
-	            <li><a href="preventivo.de.php">Kostenvoranschlag</a></li>
-	            <li><a id="activelink" href="shuttle-airport.de.php">Shuttle-Aiport</a>
+	            <li><a href="index.en.php">Home</a></li>
+	            <li><a href="prenotazioni.en.php">Reservation</a></li>
+	            <li><a href="preventivo.en.php">Estimate</a></li>
+	            <li><a id="activelink" href="shuttle-airport.en.php">Shuttle-Aiport</a>
 	        	<sup><img src="immagini/new.gif" alt="new" width="24px" 
 	        	height="11px" /></sup></li>
+	        	<li><a href="meeting.en.php">Meeting</a>
+			        	<sup><img src="immagini/new.gif" alt="new" width="24px" 
+			        	height="11px" /></sup></li>
 	        </ul>
 				</div>
 				<div id="menu-link">
@@ -65,12 +68,9 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 				</ul>
 				</div>
 			</div>
+		</div>
 	<div id = "colonna_centrale">
 		<div id="contenuti">
-			<div class="esempio">
-						<p>Sorry, German version it's not disponible yet.
-						Please excuse our fault.</p>
-					</div>
 			<img alt="shuttle-airport-logo" src="immagini/shuttle-airport.png" 
 			title="il nuovo servizio targato ctftaxi" width="300px" height="99px"/>
 			<div id="presentazione">
@@ -146,19 +146,18 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 							 	<td><img alt="ctf" src="immagini/hotel_express_inn_small.png" width="100px" height="77px"
 								title="Hotel Europa" alt="Hotel Europa"/></td>
 							</tr>									
-							</table>						
+							</table>
 							</table>
 					</div>
 					<div class="esempio">
 						<p>It's a one-way trip</p>
 					</div>
-					
 			</div>
 		</div>
-		
+
 	</div>
 </div>
-<?php
+		<?php
 		include ("include/footer.inc.php")
 		?>
 		
