@@ -80,7 +80,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 			<div id="presentazione">
 			
 				<h1>Taxi Ancona Falconara aeroport</h1>
-					<p>La <img alt="ctf" src="immagini/ctf-logo-small.png" />est un <strong>nouveau service</strong> &agrave; disposition de clients priv&eacute;s et entrepreneurs 
+					<p>La <img alt="ctf" src="immagini/ctf-logo-small.png" />est un <strong>service</strong> &agrave; disposition de clients priv&eacute;s et entrepreneurs 
 					<strong>pour le transport</strong> de personnes et de petits volumes.</p>
 					<p>Nous avons une large gamme de voitures allant de la monovolume version business &agrave; la berline version confort et luxe sans 
 						oublier les station wagons &agrave; grande commodit&eacute;.</p>

@@ -79,7 +79,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 			<div id="presentazione">
 			
 				<h1>Taxi Ancona Falconara flughafen</h1>
-					<p>Das <img alt="ctf" src="immagini/ctf-logo-small.png" />ist ein <strong>neuer Service</strong> für Privat-und Betriebskunden für den Transport von Personen und kleinen Mengen.</p>
+					<p>Das <img alt="ctf" src="immagini/ctf-logo-small.png" />ist ein <strong>Service</strong> für Privat-und Betriebskunden für den Transport von Personen und kleinen Mengen.</p>
 					<p>Wir bieten eine grosse Auswahl von Autos, vom Minivan in der Ausführung Business bis zur Limousine in der Ausführung Comfort und Luxus ohne die praktischen und geräumigen Station-wagon auszuschliessen.</p>
 				<h1>Wo befinden wir uns?</h1>
 					<p>Unsere Haupstelle ist am <a href = "http://www.ancona-airport.com/Default.asp" class="link" >Flughafen</a> von Falconara Marittima, ungefähr 20 Km von Ancona entfernt</p>

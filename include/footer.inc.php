@@ -25,7 +25,7 @@ $footer=<<<EOF
 
 				
 				
-				<h4> &copy; 2005 - 2014 ctftaxi.it  P.IVA 02218920425</h4>
+				<h4> &copy; 2005 - 2015 ctftaxi.it  P.IVA 02218920425</h4>
 				
 <!-- Google Analytics script-->				
 				<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">

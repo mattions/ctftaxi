@@ -76,7 +76,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 			<div id="presentazione">
 
 				<h1>Taxi Ancona Falconara airport</h1>
-					<p>The <img alt="ctf" src="immagini/ctf-logo-small.png" /> is a <strong>new service</strong> for private and business customers<strong> for the transport</strong> of people and small volumes.</p> 
+					<p>The <img alt="ctf" src="immagini/ctf-logo-small.png" /> is a <strong>service</strong> for private and business customers<strong> for the transport</strong> of people and small volumes.</p> 
 					<p>In our fleet there are monovolumes, stations-wagon and also comfortable sedan.</p>
 
 				<h1>Where do you find us ?</h1>

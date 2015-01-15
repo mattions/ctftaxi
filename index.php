@@ -75,7 +75,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 			<div id="contenuti">
 				<div id="presentazione">
 					<h1 >Taxi Ancona Falconara aeroporto</h1>
-						<p>La <img alt="ctf" title="C.T.F." src="immagini/ctf-logo-small.png" /> &egrave; un <strong>nuovo servizio</strong> a disposizione di utenti privati ed aziendali <strong>per il trasporto</strong> di persone e piccoli volumi.</p> 
+						<p>La <img alt="ctf" title="C.T.F." src="immagini/ctf-logo-small.png" /> &egrave; un <strong>servizio</strong> a disposizione di utenti privati ed aziendali <strong>per il trasporto</strong> di persone e piccoli volumi.</p> 
 						<p>Offriamo una vasta gamma di mezzi che vanno dalla monovolume versione business alla berlina comfort e di lusso senza escludere le comode e spaziose station wagon.</p>
 					<h1 >Dove ci trovi</h1>
 						<p>La nostra sede &egrave; sita presso 
